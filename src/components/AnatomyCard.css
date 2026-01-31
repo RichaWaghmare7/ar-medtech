@@ -1,0 +1,204 @@
+.anatomy-card {
+  position: relative;
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: cardAppear 0.5s ease-out backwards;
+}
+
+.anatomy-card:nth-child(1) { animation-delay: 0.05s; }
+.anatomy-card:nth-child(2) { animation-delay: 0.1s; }
+.anatomy-card:nth-child(3) { animation-delay: 0.15s; }
+.anatomy-card:nth-child(4) { animation-delay: 0.2s; }
+.anatomy-card:nth-child(5) { animation-delay: 0.25s; }
+.anatomy-card:nth-child(6) { animation-delay: 0.3s; }
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anatomy-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4);
+}
+
+.anatomy-card.viewed {
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.anatomy-card.viewed .anatomy-card-glow {
+  opacity: 0.15;
+}
+
+.anatomy-card-inner {
+  position: relative;
+  padding: 24px;
+  cursor: pointer;
+}
+
+.anatomy-card-glow {
+  position: absolute;
+  inset: -1px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(139, 92, 246, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.anatomy-card:hover .anatomy-card-glow {
+  opacity: 0.2;
+}
+
+.anatomy-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.anatomy-card:hover .anatomy-card-icon {
+  transform: scale(1.1);
+}
+
+.anatomy-card-title {
+  margin: 0 0 4px 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.anatomy-card-category {
+  margin: 0 0 8px 0;
+  font-size: 0.75rem;
+  color: #22d3ee;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.anatomy-card-desc {
+  margin: 0 0 16px 0;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  line-height: 1.4;
+}
+
+.anatomy-card-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.xp-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.15);
+  border-radius: 20px;
+}
+
+.done-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.15);
+  border-radius: 20px;
+}
+
+.btn-view,
+.btn-ar {
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-view {
+  color: #0f172a;
+  background: linear-gradient(135deg, #22d3ee, #06b6d4);
+}
+
+.btn-ar {
+  color: #0f172a;
+  background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+}
+
+.btn-view:hover,
+.btn-ar:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px -5px rgba(6, 182, 212, 0.4);
+}
+
+.btn-ar:hover {
+  box-shadow: 0 6px 20px -5px rgba(139, 92, 246, 0.4);
+}
+
+.anatomy-card-embed {
+  position: relative;
+  padding: 16px;
+  background: rgba(15, 23, 42, 0.9);
+  border-top: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.anatomy-card-embed iframe {
+  width: 100%;
+  height: 320px;
+  border: none;
+  border-radius: 12px;
+  display: block;
+}
+
+.btn-close-embed {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 36px;
+  height: 36px;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #94a3b8;
+  background: rgba(30, 41, 59, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+}
+
+.btn-close-embed:hover {
+  color: #f1f5f9;
+  background: rgba(51, 65, 85, 0.9);
+}
+
+.embed-credit {
+  margin: 12px 0 0 0;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.embed-credit a {
+  color: #22d3ee;
+  text-decoration: none;
+}
+
+.embed-credit a:hover {
+  text-decoration: underline;
+}
